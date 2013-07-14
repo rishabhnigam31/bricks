@@ -1,4 +1,3 @@
-
 var ctx;
 var canvas;
 var WIDTH=600;
@@ -12,9 +11,7 @@ var paddley=HEIGHT-10;
 var rightDown=false;
 var leftDown=false;
 var NRows=7;
-var NCols=8;
-var BrickWidth=59;
-var BrickHeight=10;
+var NCols=10;
 var Padding=1;
 var Bricks;
 var Row;
@@ -32,13 +29,13 @@ function initbricks()
     Padding=1;
 
     Bricks = new Array(
-		       new Array(1,1,1,1,1,1,1,1),
-		       new Array(1,1,1,1,1,0,1,1),	       
-		       new Array(1,1,1,1,0,1,1,1),
-		       new Array(1,1,1,0,1,1,1,1),
-		       new Array(1,1,0,1,1,1,1,1),
-		       new Array(1,1,1,0,1,1,1,1),
-		       new Array(1,1,1,0,1,0,1,1)
+		       new Array(1,1,1,1,1,1,1,1,1,1),
+		       new Array(1,1,1,1,1,0,1,1,1,1),	       
+		       new Array(1,1,1,1,0,1,1,1,1,1),
+		       new Array(1,1,1,0,1,1,1,1,1,1),
+		       new Array(1,1,0,1,1,1,1,1,1,1),
+		       new Array(1,1,1,0,1,1,1,1,1,1),
+		       new Array(1,1,1,0,1,0,1,1,1,1)
 		       );
 }
 
