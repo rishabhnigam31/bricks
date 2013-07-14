@@ -21,6 +21,7 @@ var ColWidth;
 var pid;
 var paddlew = 100;
 var score = 0;
+var autoplay = false;
 
 function initbricks()
 {
@@ -172,7 +173,7 @@ function draw(){
     if (y + dy < 0) {
 	dy = -dy;
     } else if (y + dy > GAME_HEIGHT-10) {
-	if (x > paddlex - 10 && x < paddlex + paddlew+ 10) {
+	if (autoplay || (x > paddlex - 10 && x < paddlex + paddlew+ 10)) {
 	    dy = -dy;
 	} else {
 	    clearInterval(pid);
