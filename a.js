@@ -1,13 +1,13 @@
 var ctx;
 var canvas;
-var WIDTH=600;
-var HEIGHT=500;
-var x=WIDTH/2;
-var y=HEIGHT/2;
+var GAME_WIDTH=600;
+var GAME_HEIGHT=500;
+var x=GAME_WIDTH/2;
+var y=GAME_HEIGHT/2;
 var dx;
 var dy;
 var paddlex=100;
-var paddley=HEIGHT-10;
+var paddley=GAME_HEIGHT-10;
 var rightDown=false;
 var leftDown=false;
 var NRows=7;
@@ -24,7 +24,7 @@ var score = 0;
 
 function initbricks()
 {
-    BrickWidth=WIDTH/NCols-1;
+    BrickWidth=GAME_WIDTH/NCols-1;
     BrickHeight=20;
     Padding=1;
 
@@ -97,10 +97,22 @@ function init(){
     dy = -3;
     pid = setInterval(draw, 10);
     score = 0;
+    about();
+}
+
+function about() {
+    ctx.fillstyle = 'blue'
+    ctx.font = "bold 16px Arial";
+    text = "Use arrow keys to move the red stick, use j and k to control speed";
+    ctx.fillText(text, 10, 530);
+    ctx.beginPath();
+    ctx.moveTo(0,500);
+    ctx.lineTo(650,500);
+    ctx.stroke();
 }
 
 function clear() {
-    ctx.clearRect(0, 0, WIDTH + 50, HEIGHT);
+    ctx.clearRect(0, 0, GAME_WIDTH + 50, GAME_HEIGHT);
     ctx.beginPath();
     ctx.moveTo(600,0);
     ctx.lineTo(600,500);
@@ -125,7 +137,7 @@ function draw(){
     clear();
     circle(x,y,10);
     
-    if (rightDown && paddlex < WIDTH-paddlew) paddlex += 10;else if (leftDown && paddlex > 0) {
+    if (rightDown && paddlex < GAME_WIDTH-paddlew) paddlex += 10;else if (leftDown && paddlex > 0) {
 	paddlex -= 10;
     }
 
@@ -153,13 +165,13 @@ function draw(){
 	score ++;
     }
     
-    if (x + dx > WIDTH || x + dx < 0) {
+    if (x + dx > GAME_WIDTH || x + dx < 0) {
 	dx = -dx;
     }
 
     if (y + dy < 0) {
 	dy = -dy;
-    } else if (y + dy > HEIGHT-10) {
+    } else if (y + dy > GAME_HEIGHT-10) {
 	if (x > paddlex - 10 && x < paddlex + paddlew+ 10) {
 	    dy = -dy;
 	} else {
