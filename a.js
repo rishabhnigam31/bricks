@@ -31,11 +31,11 @@ function initbricks()
 
     Bricks = new Array(
 		       new Array(1,1,1,1,1,1,1,1,1,1),
-		       new Array(1,1,1,1,1,0,1,1,1,1),	       
+		       new Array(0,0,0,0,0,0,0,0,0,0),
 		       new Array(1,1,1,1,0,1,1,1,1,1),
-		       new Array(1,1,1,0,1,1,1,1,1,1),
+		       new Array(0,0,0,0,0,0,0,0,0,0),
 		       new Array(1,1,0,1,1,1,1,1,1,1),
-		       new Array(1,1,1,0,1,1,1,1,1,1),
+		       new Array(0,0,0,0,0,0,0,0,0,0),
 		       new Array(1,1,1,0,1,0,1,1,1,1)
 		       );
 }
@@ -102,7 +102,7 @@ function init(){
 }
 
 function about() {
-    ctx.fillstyle = 'blue'
+    ctx.fillstyle = 'rgb(0,0,255)'
     ctx.font = "bold 16px Arial";
     text = "Use arrow keys to move the red stick, use j and k to control speed";
     ctx.fillText(text, 10, 530);
